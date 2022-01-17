@@ -3,6 +3,7 @@ package pt.mrpeace.development.recyclerviewexample
 import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.*
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
@@ -18,11 +19,12 @@ class MainActivity : AppCompatActivity(), OnSelectedListener<Item> {
         setContentView(R.layout.activity_main)
         val items = generateItem(20000)
 
-        list.layoutManager = GridLayoutManager(this,4,RecyclerView.VERTICAL,false)
+        list.layoutManager = GridLayoutManager(this,5,RecyclerView.VERTICAL,false)
 
         add_one.setOnClickListener {
             adapter.addItems(1,generateItem(1))
         }
+
 
         add_more.setOnClickListener {
             adapter.addItems(2,generateItem(10))
